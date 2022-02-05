@@ -56,10 +56,10 @@ namespace API
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1"));
             }
 
-            app.UseHttpsRedirection();
+           // app.UseHttpsRedirection();
 
             app.UseRouting();
-            app.UseCors(policy=>policy.AllowAnyMethod().WithOrigins("https://localhost:4200"));
+            app.UseCors(policy=>policy.AllowAnyMethod().WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod());
             app.UseAuthentication();
             app.UseAuthorization();
 
