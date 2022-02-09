@@ -28,6 +28,7 @@ export class ErrorInterceptor implements HttpInterceptor {
                     modelStateErrors.push(error.error.errors[key]);
                   }
                 }
+                
                 throw modelStateErrors.flat();
               }else{
                 this.toaster.error(error.statusText,error.status);
