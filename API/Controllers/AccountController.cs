@@ -43,7 +43,8 @@ namespace API.Controllers
             return new UserDto(){
                 Username=user.UserName,
                 Token=_tokenService.CreateToken(user),
-                KnowAs=user.KnownAs
+                KnownAs=user.KnownAs,
+                Gender=user.Gender
             };
         }
         private async Task<bool> UserExiste(string username)
@@ -69,7 +70,8 @@ namespace API.Controllers
                 Username=user.UserName,
                 Token=_tokenService.CreateToken(user),
                 PhotoUrl= user.Photos.FirstOrDefault(x=>x.IsMain)?.Url,
-                KnowAs=user.KnownAs
+                KnownAs=user.KnownAs,
+                Gender=user.Gender
             };
         }
     }
